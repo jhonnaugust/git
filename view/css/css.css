@@ -1,0 +1,42 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.form-signin {
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-control {
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-row{
+    margin: 30px;
+}
+
+.container{
+    background-color:#d4d4d4;
+    padding-left: 50px;
+}
+
+.row{
+    float:left;
+    
+}
+
+.cadastrar{
+    width: 100%;
+}
+
+
+#inputGanhos{
+    
+    text-align: center;
+}

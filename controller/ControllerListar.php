@@ -11,16 +11,16 @@ class listarController{
     }
 
     private function criarTabela(){
-        $row = $this->lista->getLivro();
+        $row = $this->lista->getConsultar();
         foreach ($row as $value){
             echo "<tr>";
-            echo "<th>".$value['nome'] ."</th>";
-            echo "<td>".$value['autor'] ."</td>";
-            echo "<td>".$value['quantidade'] ."</td>";
-            echo "<td> R$:".$value['preco'] ."</td>";
-            echo "<td>".$value['data'] ."</td>";
-            echo "<td>".$value['flag'] = ($value['flag'] == "0") ? "Desativado":"Ativado" ."</td>";
-            echo "<td><a class='btn btn-warning' href='editar.php?id=".$value['nome']."'>Editar</a><a class='btn btn-danger' href='../controller/ControllerDeletar.php?id=".$value['nome']."'>Excluir</a></td>";
+            echo "<th>".$value['EMPR_NOME'] ."</th>";
+            echo "<td>".$value['EMPR_CPF'] ."</td>";
+            echo "<td>".$value['EMPR_CNPJ'] ."</td>";
+            echo "<td>".$value['EMPR_EMPRESA'] ."</td>";
+            echo "<td>".$value['CONT_EMAIL']."</td>";
+            echo "<td> R$".$value['EMPR_GANHOS'] ."</td>";
+            echo "<td><a class='btn btn-warning' href='editar.php?id=".$value['EMPR_ID']."'>Editar</a><a class='btn btn-danger' href='../controller/ControllerDeletar.php?id=".$value['EMPR_ID']."'>Excluir</a></td>";
             echo "</tr>";
         }
     }

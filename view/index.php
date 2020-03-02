@@ -9,13 +9,13 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Nome</th>
-                <th>Autor</th>
-                <th>Quantidade de Páginas</th>
-                <th>Preço</th>
-                <th>Data</th>
-                <th>Flag</th>
-                <th>Opções</th>
+                <th>NOME</th>
+                <th>CPF</th>
+                <th>CNPJ</th>
+                <th>EMPRESA</th>
+                <th>EMAIL</th>
+                <th>GANHOS</th>
+                <th>AÇÃO</th>
             </tr>
         </thead>
         <tbody>

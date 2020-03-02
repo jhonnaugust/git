@@ -1,0 +1,77 @@
+﻿# SQL-Front 5.1  (Build 4.16)
+
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE */;
+/*!40101 SET SQL_MODE='NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES */;
+/*!40103 SET SQL_NOTES='ON' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS */;
+/*!40014 SET FOREIGN_KEY_CHECKS=0 */;
+
+
+# Host: localhost    Database: bitrix
+# ------------------------------------------------------
+# Server version 5.5.5-10.4.11-MariaDB
+
+#
+# Source for table contato
+#
+
+DROP TABLE IF EXISTS `contato`;
+CREATE TABLE `contato` (
+  `CONT_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `CONT_EMPR_ID` int(11) NOT NULL DEFAULT 0,
+  `CONT_TELEFONE` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `CONT_EMAIL` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
+  PRIMARY KEY (`CONT_ID`),
+  KEY `FK_CONT_EMPR_ID` (`CONT_EMPR_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Dumping data for table contato
+#
+
+LOCK TABLES `contato` WRITE;
+/*!40000 ALTER TABLE `contato` DISABLE KEYS */;
+INSERT INTO `contato` VALUES (37,55,'1199999999','joao.augusto.dti@gmail.com');
+/*!40000 ALTER TABLE `contato` ENABLE KEYS */;
+UNLOCK TABLES;
+
+#
+# Source for table empresa
+#
+
+DROP TABLE IF EXISTS `empresa`;
+CREATE TABLE `empresa` (
+  `EMPR_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `EMPR_NOME` varchar(255) DEFAULT NULL,
+  `EMPR_CPF` varchar(255) NOT NULL DEFAULT 'NOT NULL',
+  `EMPR_CNPJ` varchar(255) NOT NULL DEFAULT '',
+  `EMPR_EMPRESA` varchar(255) DEFAULT NULL,
+  `EMPR_GANHOS` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`EMPR_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Dumping data for table empresa
+#
+
+LOCK TABLES `empresa` WRITE;
+/*!40000 ALTER TABLE `empresa` DISABLE KEYS */;
+INSERT INTO `empresa` VALUES (55,'Nome Teste','373.693.318-57','000000000000','Empresa Teste','50,000');
+/*!40000 ALTER TABLE `empresa` ENABLE KEYS */;
+UNLOCK TABLES;
+
+#
+#  Foreign keys for table contato
+#
+
+ALTER TABLE `contato`
+ADD CONSTRAINT `FK_CONT_EMPR_ID` FOREIGN KEY (`CONT_EMPR_ID`) REFERENCES `empresa` (`EMPR_ID`);
+
+
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
